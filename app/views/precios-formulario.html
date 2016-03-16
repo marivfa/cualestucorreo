@@ -1,0 +1,41 @@
+<div ng-controller="CompraController">
+    <div class="modal-body">
+        <div id="price-form">
+            <div class="centered">
+                <img src="images/pago.png" alt="Precios" title="Precios" class="img-responsive">
+                <span class="text-1">Pago seguro de</span>
+                <span class="text-2">$10<sup class="text-3">USD</sup></span>
+            </div>
+            <p>Por favor llene el siguiente formulario para completar la transacción.</p>
+    
+            <form role="form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control input-sm" id="name" name="name" placeholder="Nombre y    Apellido" ng-model="name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Correo Electrónico</label>
+                    <input type="email" class="form-control input-sm" id="email" name="email" placeholder=" ejemplo@dominio.com" ng-model="email">
+                </div>
+                <div class="form-group">
+                    <label for="tdc">Tarjeta de Crédito</label>
+                    <input type="text" class="form-control input-sm" id="tdc" name="tdc" placeholder="Número de     tarjeta" ng-model="tdc">
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control input-sm" id="expiration" name="expiration"  placeholder="Expira MM/AAAA" ng-model="expiration">
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="password" class="form-control input-lg" id="cvc" name="cvc" placeholder=   "CVC" ng-model="cvc">
+                        </div>
+                    </div>
+    
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer centered">
+        <button type="button" class="btn btn-custom btn-lg" ng-click="modal.url='views/precios-exito.html'">Pagar   </button>
+    </div>
+</div>

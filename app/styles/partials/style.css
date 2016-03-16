@@ -1,0 +1,315 @@
+/* General Style */
+
+body{
+	padding-top: 70px;
+	background: #ededee !important;
+}
+p{
+	color: #595959;
+	font-size: 16px;
+	text-align: justify;
+}
+h1, h2{
+	font-weight: bold;
+	margin: 4px 0 4px 0;
+}
+h1{
+	color: #000000;
+	margin-bottom: 35px;
+}
+h2{
+	color: #595959;
+}
+h1, h2{
+	font-size: 24px;
+}
+h2{
+	text-align: left;
+}
+
+/* Custom Style */
+
+.centered{
+	text-align: center;
+}
+.centered .img-responsive{
+    margin: 0 auto;
+}
+.right{
+	text-align: right;
+}
+div.space{
+	height: 30px;
+}
+#search span, 
+#home span,
+#price-frame span,
+#price-form span,
+#price-form label,
+.info span{
+	font-weight: bold;
+}
+#search span.text-1, 
+#search span.text-2{
+	font-size: 14px;
+}
+#search span.text-1,
+#price-frame span.text-3,
+#price-frame span.text-4,
+#price-form label,
+#price-form p,
+.info p,
+.info span.text-3{
+	color: #595959;
+}
+#search span.text-2, 
+#search span.text-3, 
+#home span.text-2, 
+#home span.text-3,
+#home span.text-4,
+#price-frame span.text-1,
+#price-form span.text-2,
+.info span.text-2{
+	color: #11d1ac;
+}
+#search span.text-2{
+	margin-left: 5px;
+}
+#home span,
+.info span.text-1,
+.info span.text-2{
+	font-size: 24px;
+}
+#home span.text-1, 
+#home span.text-2,
+#price-frame span.text-3,
+#price-form span.text-1,
+.info span.text-1{
+	display: block;
+}
+#home span.text-1,
+#price-frame span .text-2,
+#price-form span.text-1,
+#price-form span .text-3,
+.info span.text-1{
+	color: #000000;
+}
+#home span.text-3 {
+	padding: 0 10px 0 10px;
+}
+#home span.text-4,
+#price-frame span.text-3,
+#price-frame span.text-4,
+.info p,
+.info span.text-3{
+	font-size: 16px;
+}
+#home button {
+	margin-left: 10px;
+}
+@media(max-width:767px){
+	#home span.text-3{
+		padding: 0;
+		margin-bottom: 10px;
+		display: block;
+	}
+	#search{
+		margin-bottom: 10px;
+	}
+}
+#result{
+	padding: 20px;
+}
+#price-frame{
+	background-color: #ffffff;
+	width: 285px;
+	padding: 30px;
+	margin-right: -4px;
+	display: inline-block;
+	float: none;
+}
+#price-frame span.text-1{
+	font-size: 60px;
+}
+#price-frame span .text-2{
+	font-size: 35px;
+}
+#price-frame span.text-4{
+	font-weight: normal;
+}
+#price-frame button{
+	margin-top: 20px;
+}
+#price-form span.text-1,
+#price-form span.text-2{
+	line-height: 1;
+}
+#price-form span.text-1{
+	font-size: 18px;
+}
+#price-form span.text-2{
+	font-size: 43px;
+}
+#price-form span .text-3{
+	font-size: 23px;
+}
+#price-form p,
+#price-form label,
+#price-form input{
+	font-size: 14px;
+}
+#price-form p{
+	margin-top: 15px;
+}
+#price-form label{
+	float: left;
+}
+.info p{
+	text-align: center;
+	padding: 10px 0 10px 0;
+}
+
+/* Custom Boostrap */
+
+.navbar-default{
+	background-color: #ffffff;
+	font-weight: bold;
+	border: none;
+}
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-text, 
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-link{
+	color: #595959;
+}
+@media(min-width:768px){
+	body{
+		padding-top: 100px;
+	}
+	.navbar-default, .navbar-brand{
+		min-height:60px;
+	}
+    .navbar-fixed-top .navbar-brand{
+        padding: 8px 0;
+    }
+    .navbar-default .navbar-nav a{
+    	margin-top: 3px 0;
+    	min-height:60px;
+    }
+	.navbar-default .nav-pills > li > a{
+    	border-bottom-width: 5px;
+		border-bottom-style: solid;
+		border-bottom-color: transparent;
+	}
+	.navbar-nav > li > a{
+    	padding-top: 19px;
+	}
+	.navbar-default .nav-pills > .active > a,
+	.navbar-default .nav-pills > .active > a:hover,
+	.nav-pills > li > a:hover,
+	.nav-pills > li > a:visited{
+	  	border-bottom-width: 5px;
+		border-bottom-style: solid;
+		border-bottom-color: #11d1ac;
+	  	color: #595959;
+	}
+	.navbar-default .navbar-nav > .active > a, 
+	.navbar-default .navbar-nav > .active > a:focus, 
+	.navbar-default .navbar-nav > .active > a:hover{
+    	background-color: #ffffff;
+	}
+	.navbar-default .nav-pills > li > a{
+	    border-radius:0px;
+	}
+}
+@media(max-width:767px){
+	.navbar-default, .navbar-brand{
+		min-height:0;
+	}
+	.navbar-fixed-top .navbar-brand{
+	    padding: 5px 15px;
+	}
+	.navbar-default .navbar-nav > li > a:hover,
+	.navbar-default .navbar-nav > li > a:focus{
+		color: #11d1ac;
+	}
+}
+.btn-custom{
+  color: #ffffff;
+  background-color: #11d1ac;
+  border-color: #11d1ac;
+  border-radius: 3px;
+}
+.btn-custom:focus,
+.btn-custom.focus{
+  color: #ffffff;
+  background-color: #c8cac9;
+  border-color: #03251e;
+}
+.btn-custom:hover{
+  color: #ffffff;
+  background-color: #c8cac9;
+  border-color: #c8cac9;
+}
+.btn-custom:active,
+.btn-custom.active,
+.open > .dropdown-toggle.btn-custom{
+  color: #ffffff;
+  background-color: #c8cac9;
+  border-color: #c8cac9;
+}
+.btn-custom:active:hover,
+.btn-custom.active:hover,
+.open > .dropdown-toggle.btn-custom:hover,
+.btn-custom:active:focus,
+.btn-custom.active:focus,
+.open > .dropdown-toggle.btn-custom:focus,
+.btn-custom:active.focus,
+.btn-custom.active.focus,
+.open > .dropdown-toggle.btn-custom.focus{
+  color: #ffffff;
+  background-color: #c8cac9;
+  border-color: #03251e;
+}
+.btn-custom:active,
+.btn-custom.active,
+.open > .dropdown-toggle.btn-custom{
+  background-image: none;
+}
+.btn-custom.disabled:hover,
+.btn-custom[disabled]:hover,
+fieldset[disabled] .btn-custom:hover,
+.btn-custom.disabled:focus,
+.btn-custom[disabled]:focus,
+fieldset[disabled] .btn-custom:focus,
+.btn-custom.disabled.focus,
+.btn-custom[disabled].focus,
+fieldset[disabled] .btn-custom.focus{
+  background-color: #11d1ac;
+  border-color: #0d9b7f;
+}
+.btn-custom .badge{
+  color: #11d1ac;
+  background-color: #ffffff;
+}
+.modal-content{
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important; 
+}
+.modal-body{
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.modal-header{
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+.modal-footer{
+	border-top: 0;
+	padding-top: 0;
+}
+.form-control{
+	border: none;
+	border-radius: 3px;
+}
