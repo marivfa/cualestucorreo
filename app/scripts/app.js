@@ -15,7 +15,11 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'restangular',
+    'credit-cards',
+    'timer'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -32,20 +36,8 @@ angular
         templateUrl: 'views/politica.html'
       })
       .when('/precios', {
-        controller: 'CompraController',
-        templateUrl: 'views/precios.html'
-      })
-      .when('views/precios-formulario.html', {
-        controller: 'CompraController',
-        templateUrl: 'views/precios-formulario.html'
-      })
-      .when('views/precios-exito.html', {
-        controller: 'CompraController',
-        templateUrl: 'views/precios-exito.html'
-      })
-      .when('views/busquedas-agotadas.html', {
         controller: 'InicioController',
-        templateUrl: 'views/busquedas-agotadas.html'
+        templateUrl: 'views/precios.html'
       })
       .otherwise({
         redirectTo: '/'

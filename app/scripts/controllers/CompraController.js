@@ -1,12 +1,33 @@
-angular.module('cualestucorreoApp').controller('CompraController', CompraController);
+'use strict';
 
-CompraController.$inject = ['$scope'];
+angular.module('cualestucorreoApp').controller('CompraController', function($scope, $uibModal, $location, $timeout) {
+	//$scope.name = "John Doe";
+	//$scope.email = "john.doe@domain.com";
+	$scope.card={};
+	//$scope.card.number = "4242 4242 4242 4242";
+	//$scope.card.exp_month = "07";
+	//$scope.card.exp_year = "2016";
+	//$scope.card.cvc = "***";
 
-function CompraController($scope) {
-	$scope.name = "John Doe";
-	$scope.email = "john.doe@domain.com";
-	$scope.tdc = "XXXX XXXX XXXX XXXX XXXX";
-	$scope.expiration = "07/2017";
-	$scope.cvc = "***";
-}
+	$scope.cancel = function () {
+		$scope.$dismiss('cancel');
+	};
+
+	$scope.modalPaymentSuccess = function(){
+		$scope.cancel();
+		$uibModal.open({
+			animation: true,
+			templateUrl: 'views/precios-exito.html',
+			controller: function($scope, $uibModalInstance) {
+				$scope.cancel = function () {
+				    $uibModalInstance.dismiss('cancel');
+				};
+				$scope.go = function (path){
+				 	$scope.cancel();
+  					$location.path(path);
+				};
+			}
+		});
+	}
+});
 

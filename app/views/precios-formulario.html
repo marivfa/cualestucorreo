@@ -1,41 +1,58 @@
-<div ng-controller="CompraController">
-    <div class="modal-body">
-        <div id="price-form">
-            <div class="centered">
-                <img src="images/pago.png" alt="Precios" title="Precios" class="img-responsive">
-                <span class="text-1">Pago seguro de</span>
-                <span class="text-2">$10<sup class="text-3">USD</sup></span>
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <div class="modal-title"></div>
+</div>
+<div class="modal-body">
+    <div id="price-form">
+        <div class="centered">
+            <img src="images/pago.png" alt="Precios" title="Precios" class="img-responsive">
+            <span class="text-1">Pago seguro de</span>
+            <span class="text-2">$10<sup class="text-3">USD</sup></span>
+        </div>
+        <p>Por favor llene el siguiente formulario para completar la transacción.</p>
+
+        <form role="form" name="paymentForm" id="paymentForm" novalidate> 
+            <div class="form-group" ng-class="{'has-error': paymentForm.name.$invalid}">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control input-sm" id="name" name="name" placeholder="Nombre y Apellido" ng-model="name" required>
+                <div class="help-block" ng-show="!paymentForm.name.$pristine && paymentForm.name.$invalid">El campo nombre es requerido.</div>
             </div>
-            <p>Por favor llene el siguiente formulario para completar la transacción.</p>
-    
-            <form role="form">
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="form-control input-sm" id="name" name="name" placeholder="Nombre y    Apellido" ng-model="name">
-                </div>
-                <div class="form-group">
-                    <label for="name">Correo Electrónico</label>
-                    <input type="email" class="form-control input-sm" id="email" name="email" placeholder=" ejemplo@dominio.com" ng-model="email">
-                </div>
-                <div class="form-group">
-                    <label for="tdc">Tarjeta de Crédito</label>
-                    <input type="text" class="form-control input-sm" id="tdc" name="tdc" placeholder="Número de     tarjeta" ng-model="tdc">
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <input type="text" class="form-control input-sm" id="expiration" name="expiration"  placeholder="Expira MM/AAAA" ng-model="expiration">
+            <div class="form-group" ng-class="{'has-error': paymentForm.email.$invalid}">
+                <label for="name">Correo Electrónico</label>
+                <input type="email" class="form-control input-sm" id="email" name="email" placeholder="ejemplo@dominio.com" ng-model="email" required>
+                 <div class="help-block" ng-show="!paymentForm.email.$pristine && paymentForm.email.$error.required">Correo electrónico requerido.</div>
+                 <div class="help-block" ng-show="!paymentForm.email.$pristine && paymentForm.email.$invalid && paymentForm.email.$error.email">Correo electrónico no cumple con el formato.</div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': paymentForm.number.$invalid}">
+                <label for="tdc">Tarjeta de Crédito</label>
+                <input type="text" class="form-control input-sm" id="number" name="number" placeholder="Número de tarjeta" ng-model="card.number" maxlength="19" cc-number cc-format required>
+                <div class="help-block" ng-show="!paymentForm.number.$pristine && paymentForm.number.$error.required">Número de tarjeta de crédito requerido.</div>
+                <div class="help-block" ng-show="!paymentForm.number.$pristine && paymentForm.number.$invalid && paymentForm.number.$error.ccNumber && !paymentForm.number.$error.required">Número de tarjeta de crédito inválido.</div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div cc-exp>
+                        <div class="col-xs-4" ng-class="{'has-error': paymentForm.exp_month.$invalid}">
+
+                             <input type="text" class="form-control input-sm" id="exp_month" name="exp_month" placeholder="Expira MM" ng-model="card.exp_month" ng-minlength="1" cc-exp-month required>
+                            <div class="help-block" ng-show="!paymentForm.exp_month.$pristine && paymentForm.exp_month.$invalid && paymentForm.exp_month.$error.ccExpMonth && !paymentForm.exp_month.$error.required">Mes inválido.</div>
                         </div>
-                        <div class="col-xs-6">
-                            <input type="password" class="form-control input-lg" id="cvc" name="cvc" placeholder=   "CVC" ng-model="cvc">
+                        <div class="col-xs-4" ng-class="{'has-error': paymentForm.exp_year.$invalid}">
+                            <input type="text" class="form-control input-sm" id="exp_year" name="exp_year"      placeholder="Expira AAAA" ng-model="card.exp_year" cc-exp-year full-year required>
+                             <div class="help-block" ng-show="!paymentForm.exp_year.$pristine && paymentForm.exp_year.$invalid && paymentForm.exp_year.$error.ccExpYear && !paymentForm.exp_year.$error.required">Año inválido.</div>
                         </div>
                     </div>
-    
+                    <div class="col-xs-4" ng-class="{'has-error': paymentForm.cvc.$invalid}">
+                        <input type="password" class="form-control input-sm" id="cvc" name="cvc" placeholder="CVC" ng-model="card.cvc" cc-cvc required>
+                        <div class="help-block" ng-show="!paymentForm.cvc.$pristine && paymentForm.cvc.$invalid && paymentForm.cvc.$error.required">CVC requerido.</div>
+                        <div class="help-block" ng-show="!paymentForm.cvc.$pristine && paymentForm.cvc.$invalid && paymentForm.cvc.$error.ccCvc && !paymentForm.cvc.$error.required">CVC inválido.</div>
+                    </div>
                 </div>
-            </form>
-        </div>
-    </div>
-    <div class="modal-footer centered">
-        <button type="button" class="btn btn-custom btn-lg" ng-click="modal.url='views/precios-exito.html'">Pagar   </button>
+
+            </div>
+        </form>
     </div>
 </div>
+ <div class="modal-footer centered">
+     <button type="button" class="btn btn-custom btn-lg btn-large" ng-disabled="paymentForm.$invalid" ng-click="modalPaymentSuccess()">Pagar</button>
+ </div>

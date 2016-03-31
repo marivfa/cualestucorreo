@@ -26,6 +26,15 @@ h1, h2{
 h2{
 	text-align: left;
 }
+hr{
+	border-color: #c8cac9;
+	width: 18%;
+}
+a.link{
+	color: #11d1ac;
+	font-weight: bold;
+	text-decoration: underline;
+}
 
 /* Custom Style */
 
@@ -41,6 +50,9 @@ h2{
 div.space{
 	height: 30px;
 }
+div.space-md{
+	height: 20px;
+}
 #search span, 
 #home span,
 #price-frame span,
@@ -49,11 +61,15 @@ div.space{
 .info span{
 	font-weight: bold;
 }
+#home span.text-5{
+	font-weight: normal;
+}
 #search span.text-1, 
 #search span.text-2{
 	font-size: 14px;
 }
 #search span.text-1,
+#home span.text-5,
 #price-frame span.text-3,
 #price-frame span.text-4,
 #price-form label,
@@ -167,6 +183,11 @@ div.space{
 .info p{
 	text-align: center;
 	padding: 10px 0 10px 0;
+}
+span.timer{
+	color: #000000;
+	font-size: 40px;
+	font-weight: bold;
 }
 
 /* Custom Boostrap */
@@ -291,6 +312,9 @@ fieldset[disabled] .btn-custom.focus{
 .btn-custom .badge{
   color: #11d1ac;
   background-color: #ffffff;
+}
+.btn-large{
+	min-width: 180px;
 }
 .modal-content{
     -webkit-border-radius: 0 !important;
