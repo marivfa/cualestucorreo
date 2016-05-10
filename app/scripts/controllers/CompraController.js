@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('cualestucorreoApp').controller('CompraController', function($scope, $uibModal, $location, $timeout) {
+angular.module('cualestucorreoApp').controller('CompraController', ['$scope', '$uibModal', '$location', '$timeout',
+	function($scope, $uibModal, $location, $timeout) {
 	//$scope.name = "John Doe";
 	//$scope.email = "john.doe@domain.com";
 	$scope.card={};
@@ -18,7 +19,8 @@ angular.module('cualestucorreoApp').controller('CompraController', function($sco
 		$uibModal.open({
 			animation: true,
 			templateUrl: 'views/precios-exito.html',
-			controller: function($scope, $uibModalInstance) {
+			controller: ['$scope', '$uibModalInstance',
+			function($scope, $uibModalInstance) {
 				$scope.cancel = function () {
 				    $uibModalInstance.dismiss('cancel');
 				};
@@ -26,8 +28,8 @@ angular.module('cualestucorreoApp').controller('CompraController', function($sco
 				 	$scope.cancel();
   					$location.path(path);
 				};
-			}
+			}]
 		});
 	}
-});
+}]);
 
