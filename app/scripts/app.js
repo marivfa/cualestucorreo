@@ -30,7 +30,7 @@ angular
             controller: 'BusquedaController',
             templateUrl: 'views/inicio.html'
         })
-        .when('/terminos/:userid/:usermail', {
+        .when('/terminos', {
             controller: 'BusquedaController',
             templateUrl: 'views/terminos.html'
         })
