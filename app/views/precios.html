@@ -1,4 +1,4 @@
-<div class="centered col-lg-12">
+<div class="centered col-lg-12" ng-init="configureStripe()">
     <h1>PRECIOS</h1>
 
     <p>Recuerda, si deseas tener búsquedas ilimitadas, ¡solo debes adquirir nuestro paquete ilimitado! Una vez se haya realizado tu pago, recibirás un correo con un link, con el que podrás hacer tus búsquedas ilimitadas.</p>
@@ -10,19 +10,7 @@
     	<span class="text-3">PAQUETE MENSUAL</span>
     	<span class="text-4">Búsquedas ilimitadas<br>durante un mes.</span>
 
-    	<button type="button" class="btn btn-custom btn-lg" ng-click="modalPaymentForm()">¡Adquiérelo ahora!</button>
-
-        <!--form action="" method="POST">
-          <script
-            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-            data-amount="999"
-            data-name="Stripe.com"
-            data-description="Widget"
-            data-image="/img/documentation/checkout/marketplace.png"
-            data-locale="auto">
-          </script>
-        </form-->
+    	<button id="customButton" class="btn btn-custom btn-lg">¡Adquiérelo ahora!</button>
 
 	</div>
 

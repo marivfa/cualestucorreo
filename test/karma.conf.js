@@ -34,7 +34,6 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/lodash/lodash.js',
       'bower_components/restangular/dist/restangular.js',
-      'bower_components/angular-credit-cards/release/angular-credit-cards.js',
       'bower_components/momentjs/moment.js',
       'bower_components/humanize-duration/humanize-duration.js',
       'bower_components/angular-timer/dist/angular-timer.js',

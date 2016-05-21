@@ -3,11 +3,10 @@
 angular.module('cualestucorreoApp').factory('DataService',['Restangular',function(Restangular){
 
 	Restangular.setBaseUrl('http://ec2-54-173-170-67.compute-1.amazonaws.com:3000');
-	//Restangular.setBaseUrl('http://200.90.111.68:3000');
 	
 	var dataService = {};
 
-	dataService.getSearchEmail = function (nameSearch, domainSearch){
+	dataService.getSearchEmail = function (nameSearch, domainSearch, userid, usermail){
 		
 		//Respuesta del servidor -->
 		//accesoPermitido : true , false
@@ -24,21 +23,26 @@ angular.module('cualestucorreoApp').factory('DataService',['Restangular',functio
 			nombre : nameSearch,
 			apellido : "",
 			dominio : domainSearch,
-			userType : "guest"
+			userid : userid,
+			usermail : usermail
 		});
 		
-	}
+	};
 
-	dataService.processPayment = function (data){
-	}
+	dataService.processPayment = function (token){
+		return Restangular.all('pagos').post({
+			token : token
+		});
+	};
 
-	dataService.getRemainingSearches = function (){
+	dataService.getRemainingSearches = function (userid, usermail){
 		
 		return Restangular.all('consultas').post({
-			userType : "guest"
+			userid : userid,
+			usermail : usermail
 		});
 		
-	}
+	};
 
 	return dataService;
 }]);

@@ -8,9 +8,9 @@
     <meta name="author" content="">
 
     <title>Cuál es su correo</title>
-    <link rel="icon" href="images/favicon-16x16.ico" sizes="16x16">
-    <link rel="icon" href="images/favicon-32x32.ico" sizes="32x32">
-    <link rel="icon" href="images/favicon-64x64.ico" sizes="64x64">
+    <link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="images/favicon-64x64.png" sizes="64x64">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="cualestucorreoApp" ng-controller="InicioController" >
+  <body ng-app="cualestucorreoApp" ng-controller="InicioController">
     <!--[if lte IE 8]>
     <![endif]-->
 
@@ -61,22 +61,29 @@
     </nav>
 
     <div class="container">
-      <div class="row" id="search">
-        <div class="col-lg-12">
-          <div class="right">
-            <span class="text-1">BÚSQUEDAS RESTANTES</span>
-            <span class="text-2" id="searchNumber" ng-cloak>{{ responseFactory.searches }}</span>
-          </div>
-        </div>
-      </div>
 
-      <div class="row" id="content" ng-view>
-      </div>
+        <div class="row" id="search">
+            <div class="col-lg-6">
+                <div class="left" ng-if="responseFactory.usermail!=null">
+                    <span class="text-1">Bienvenid@, {{ responseFactory.usermail }}</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right">
+                    <span class="text-1">{{ responseFactory.info }}</span>
+                    <span class="text-2" id="searchNumber" ng-cloak>{{ responseFactory.total }}
+                    <img src="images/loading.gif" ng-show="responseFactory.total==null"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="content" ng-view>
+        </div>
 
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+    <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
@@ -100,7 +107,6 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
-    <script src="bower_components/angular-credit-cards/release/angular-credit-cards.js"></script>
     <script src="bower_components/momentjs/moment.js"></script>
     <script src="bower_components/humanize-duration/humanize-duration.js"></script>
     <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
@@ -110,8 +116,11 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/DataService.js"></script>
-    <script src="scripts/controllers/CompraController.js"></script>
     <script src="scripts/controllers/InicioController.js"></script>
+    <script src="scripts/controllers/BusquedaController.js"></script>
+    <script src="scripts/controllers/CompraController.js"></script>
     <!-- endbuild -->
+
+    <script src="https://checkout.stripe.com/checkout.js"></script>
 </body>
 </html>

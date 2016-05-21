@@ -18,7 +18,8 @@
             <span class="text-3">@</span>
             <input type="text" class="form-control input-lg" id="domainSearch" id="domainSearch" placeholder="dominio.com" ng-model="domainSearch" ng-pattern="validDomain" ng-keyup="searchEmailENTER($event)" required>
         </div>
-        <button type="button" class="btn btn-custom btn-lg" ng-disabled="searchForm.$invalid" ng-click="searchEmail()">¡Encuéntra email!</button>
+        <button type="button" class="btn btn-custom btn-lg" ng-disabled="searchForm.$invalid" ng-click="searchEmail()">¡Encuéntra email! <img src="images/search.gif" ng-show="showSearching"></button>
+
     </form>
 
     <div id="result" class="centered">
