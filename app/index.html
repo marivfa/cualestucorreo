@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="theme-color" content="#11d1ac">
 
     <title>Cuál es su correo</title>
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
@@ -47,9 +48,6 @@
             <li ng-class="{active:isActive('/terminos')}">
               <a href="#/terminos" ng-click="reloadRoute()">TÉRMINOS Y CONDICIONES</a>
             </li>
-            <li ng-class="{active:isActive('/politica')}">
-              <a href="#/politica" ng-click="reloadRoute()">POLÍTICA DE PRIVACIDAD</a>
-            </li>
             <li ng-class="{active:isActive('/precios')}">
               <a href="#/precios" ng-click="reloadRoute()">PRECIOS</a>
             </li>
@@ -60,7 +58,7 @@
       <!-- /.container -->
     </nav>
 
-    <div class="container">
+    <div class="container" ng-cloak>
 
         <div class="row" id="search">
             <div class="col-lg-6">

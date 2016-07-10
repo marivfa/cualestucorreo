@@ -2,6 +2,8 @@
 
 angular.module('cualestucorreoApp').factory('DataService',['Restangular',function(Restangular){
 
+	//Restangular.setBaseUrl('http://186.90.66.30:3000');
+	//Restangular.setBaseUrl('http://homezerox.all.my:3000');
 	Restangular.setBaseUrl('http://ec2-54-173-170-67.compute-1.amazonaws.com:3000');
 	
 	var dataService = {};

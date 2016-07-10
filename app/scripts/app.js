@@ -34,10 +34,6 @@ angular
             controller: 'BusquedaController',
             templateUrl: 'views/terminos.html'
         })
-        .when('/politica', {
-            controller: 'BusquedaController',
-            templateUrl: 'views/politica.html'
-        })
         .when('/precios', {
             controller: 'CompraController',
             templateUrl: 'views/precios.html'
