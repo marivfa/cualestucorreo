@@ -20,7 +20,10 @@ angular
         'restangular',
         'timer'
     ])
-    .config(function ($routeProvider) {
+    .config(function ($routeProvider, $locationProvider) {
+
+    $locationProvider.hashPrefix('!');
+
     $routeProvider
         .when('/', {
             controller: 'BusquedaController',

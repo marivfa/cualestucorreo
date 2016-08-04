@@ -7,6 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="theme-color" content="#11d1ac">
+    <meta name="description" content="rastreador de correos empresariales, ubica o verifica la validez de un email o correo electronico, si solo tienes el nombre y a que empresa trabaja podemos encontrar su correo, solo debes darnos nombre apellido y dominio ">
+    <meta name="keywords" content="correos, buscador, emails, email, encontrar, find, emails, domains, dominios, verificar">
+    <meta name="description" content="rastreador de correos empresariales, ubica o verifica la validez de un email o correo electronico, si solo tienes el nombre y a que empresa trabaja podemos encontrar su correo, solo debes darnos nombre apellido y dominio ">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <title>Cuál es su correo</title>
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
@@ -38,7 +43,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#/" ng-click="reloadRoute()">
+          <a class="navbar-brand" href="#!/" ng-click="reloadRoute()">
             <img src="images/logo.png" alt="Cuál es su correo" title="Cuál es su correo" class="img-responsive">
           </a>
         </div>
@@ -46,10 +51,10 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right nav-pills">
             <li ng-class="{active:isActive('/terminos')}">
-              <a href="#/terminos" ng-click="reloadRoute()">TÉRMINOS Y CONDICIONES</a>
+              <a href="#!/terminos" ng-click="reloadRoute()">TÉRMINOS Y CONDICIONES</a>
             </li>
             <li ng-class="{active:isActive('/precios')}">
-              <a href="#/precios" ng-click="reloadRoute()">PRECIOS</a>
+              <a href="#!/precios" ng-click="reloadRoute()">PRECIOS</a>
             </li>
           </ul>
         </div>
@@ -105,7 +110,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
-    <script src="bower_components/momentjs/moment.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/humanize-duration/humanize-duration.js"></script>
     <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
     <!-- endbower -->

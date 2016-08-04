@@ -56,7 +56,8 @@ angular.module('cualestucorreoApp').controller('CompraController', ['$scope', '$
 	$scope.configureStripe = function(){
 
 		var handler = StripeCheckout.configure({
-	    	key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+	    	//key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+        key: 'pk_live_tOpqAyvLIUViQzlXUiuZdUzT',
 	    	image: 'images/logomin.png',
 	    	locale: 'es',
 	    	token: function(token) {
@@ -82,7 +83,7 @@ angular.module('cualestucorreoApp').controller('CompraController', ['$scope', '$
 				);
 	    	}
 	  	});
-	
+
 	  	$('#customButton').on('click', function(e) {
 	    	// Open Checkout with further options:
 	    	handler.open({
@@ -93,7 +94,7 @@ angular.module('cualestucorreoApp').controller('CompraController', ['$scope', '$
 	    	});
 	    	e.preventDefault();
 	  	});
-	
+
 	 	// Close Checkout on page navigation:
 	 	$(window).on('popstate', function() {
 	 	  handler.close();
