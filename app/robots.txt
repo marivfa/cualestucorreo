@@ -2,3 +2,6 @@
 
 User-agent: *
 Disallow:
+Disallow: /wp-admin/
+
+Sitemap: https://cualessucorreo.com/sitemap.xml
